@@ -67,10 +67,9 @@ const ProductView = ({ configuration }) => {
             </div>
             <Map
               location={{
-                address:
-                  "1600 Amphitheatre Parkway, Mountain View, california.",
-                lat: 37.42216,
-                lng: -122.08427,
+                address: companyAddress,
+                lat: product?.company?.address?.latitude,
+                lng: product?.company?.address?.longitude,
               }}
             />
           </div>
