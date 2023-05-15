@@ -8,6 +8,7 @@ import PageLayout from "features/layout/PageLayout";
 
 //Lazy Imports
 const ProductPage = lazy(() => import("product/productView"));
+const EditPage = lazy(() => import("edit/editView"));
 
 function App() {
   //App Id for fetching product configuration
@@ -27,17 +28,20 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<PageLayout />}>
+      <Route
+        path="/"
+        element={
+          <Suspense fallback={<Loader loaderText="Loading Page..." />}>
+            <PageLayout />
+          </Suspense>
+        }
+      >
         <Route index element={<h1>Home Page</h1>} />
         <Route
           path="product/:id"
-          element={
-            <Suspense fallback={<Loader loaderText="Loading Page..." />}>
-              <ProductPage configuration={appConfig} />
-            </Suspense>
-          }
+          element={<ProductPage configuration={appConfig} />}
         />
-        <Route path="product/edit" element={<h1>Edit Page</h1>} />
+        <Route path="product/edit" element={<EditPage />} />
       </Route>
       <Route path="*" element={<h1>Page Not Found</h1>} />
     </Routes>
