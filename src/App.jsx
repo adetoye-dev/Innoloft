@@ -5,6 +5,7 @@ import { fetchAppConfiguration } from "config/configSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "features/loader/Loader";
 import PageLayout from "features/layout/PageLayout";
+import PageNotFound from "./features/404/PageNotFound";
 
 //Lazy Imports
 const ProductPage = lazy(() => import("product/productView"));
@@ -43,7 +44,7 @@ function App() {
         />
         <Route path="product/edit" element={<EditPage />} />
       </Route>
-      <Route path="*" element={<h1>Page Not Found</h1>} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 }
