@@ -5,7 +5,7 @@ import { fetchProduct } from "product/productSlice";
 const initialState = {
   loading: false,
   error: "",
-  data: {},
+  data: [],
   selected: {},
 };
 
