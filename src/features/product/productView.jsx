@@ -33,7 +33,9 @@ const ProductView = ({ configuration }) => {
       <div className="main flex flex-col md:flex-row rounded-lg text-lg bg-white border border-[#E5E7EB]">
         <div className="product-details p-5  md:w-3/4">
           <img src={product?.picture} alt="product-img" />
-          <h1 className="product-title font-bold text-3xl">{product?.title}</h1>
+          <h1 className="product-title font-bold text-3xl my-5">
+            Intelligent Finite Elements in Structural mechanics
+          </h1>
           <p className="product-desc text-lg">{product?.description}</p>
         </div>
         <div className="company-details p-5 md:w-2/5 md:border-l border-[#E5E7EB]">
