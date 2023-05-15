@@ -1,10 +1,13 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { fetchAppConfiguration } from "config/configSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "features/loader/Loader";
-import PageLayout from "./features/layout/PageLayout";
+import PageLayout from "features/layout/PageLayout";
+
+//Lazy Imports
+const ProductPage = lazy(() => import("product/productView"));
 
 function App() {
   //App Id for fetching product configuration
@@ -26,7 +29,14 @@ function App() {
     <Routes>
       <Route path="/" element={<PageLayout />}>
         <Route index element={<h1>Home Page</h1>} />
-        <Route path="product/:id" element={<h1>Product Page</h1>} />
+        <Route
+          path="product/:id"
+          element={
+            <Suspense fallback={<Loader loaderText="Loading Page..." />}>
+              <ProductPage configuration={appConfig} />
+            </Suspense>
+          }
+        />
         <Route path="product/edit" element={<h1>Edit Page</h1>} />
       </Route>
       <Route path="*" element={<h1>Page Not Found</h1>} />
