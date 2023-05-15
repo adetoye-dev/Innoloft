@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { fetchAppConfiguration } from "config/configSlice";
 import { useSelector, useDispatch } from "react-redux";
+import Loader from "features/loader/Loader";
 
 const PageLayout = () => {
   return (
@@ -31,7 +32,7 @@ function App() {
     dispatch(fetchAppConfiguration(APP_ID));
   }, []);
 
-  if (loading) return <p>Loading App Configurations...</p>;
+  if (loading) return <Loader loaderText="Loading App Configurations..." />;
 
   return (
     <Routes>
