@@ -4,7 +4,7 @@ import NavItem from "./NavItem";
 
 const SideBar = () => {
   return (
-    <div className="h-full md:w-1/5 lg:w-1/4 bg-white hidden md:block">
+    <div className="h-full md:w-1/5 lg:w-1/4 hidden md:block">
       <div className="user-data flex gap-5 items-center">
         <div className="user-image w-20 h-20 rounded-full overflow-hidden">
           <img src={ProfileImage} alt="profile-img" />
