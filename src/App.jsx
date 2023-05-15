@@ -1,22 +1,10 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { Outlet } from "react-router-dom";
 import { fetchAppConfiguration } from "config/configSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "features/loader/Loader";
-
-const PageLayout = () => {
-  return (
-    <>
-      <div>Page Header Goes Here</div>
-      <div>Page Navigation Goes Here</div>
-      <main className="page-content">
-        <Outlet />
-      </main>
-    </>
-  );
-};
+import PageLayout from "./features/layout/PageLayout";
 
 function App() {
   //App Id for fetching product configuration
