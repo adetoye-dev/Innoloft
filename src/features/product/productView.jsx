@@ -30,7 +30,11 @@ const ProductView = ({ configuration }) => {
 
   return (
     <>
-      <div className="main flex flex-col md:flex-row rounded-lg text-lg bg-white border border-[#E5E7EB]">
+      <div className="main relative flex flex-col md:flex-row rounded-lg text-lg bg-white border border-[#E5E7EB]">
+        <div className="absolute p-3 bg-blue-950 text-white rounded-br-xl flex gap-3">
+          <img src="/icons/type-icon.svg" alt="product-type-icon" />
+          <span>{product?.type?.name}</span>
+        </div>
         <div className="product-details p-5  md:w-3/4">
           <img src={product?.picture} alt="product-img" />
           <h1 className="product-title font-bold text-3xl my-5">
