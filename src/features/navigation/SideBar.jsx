@@ -15,8 +15,12 @@ const SideBar = () => {
         </div>
       </div>
       <nav className="flex flex-col gap-10 mt-10">
-        <NavItem icon={"home-icon.svg"} text={"home"} />
-        <NavItem icon={"product-icon.svg"} text={"product"} />
+        <NavItem route="/" icon={"home-icon.svg"} text={"home"} />
+        <NavItem
+          route="/product/6781"
+          icon={"product-icon.svg"}
+          text={"product"}
+        />
       </nav>
     </div>
   );
