@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const NavItem = ({ route, icon, text }) => {
+const NavItem = ({ clickAction, route, icon, text }) => {
   const linkStyles = "nav-item flex gap-5 items-center hover:font-bold";
   return (
     <NavLink
+      onClick={clickAction ? clickAction : ""}
       to={route}
       className={({ isActive }) =>
         isActive ? linkStyles + " font-bold" : linkStyles
