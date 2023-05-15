@@ -10,7 +10,7 @@ const PageLayout = () => {
       <Header mainColor={appConfig.mainColor} />
       <div className="layout-container flex h-full pt-10">
         <SideBar />
-        <main className="container bg-red-200">
+        <main className="container mb-10">
           <Outlet />
         </main>
       </div>
