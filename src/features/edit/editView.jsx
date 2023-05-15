@@ -2,7 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import ReactPlayer from "react-player";
-import TrlView from "./trl/TrlView";
+import TrlView from "edit/trl/TrlView";
+import CategoryView from "edit/categories/categoryView";
+import BusinessModelView from "edit/businessModels/BusinessModelView";
 
 const EditView = () => {
   const product = useSelector((state) => state.product.data);
@@ -61,6 +63,12 @@ const EditView = () => {
       </div>
       <div className="rounded-lg mt-5 p-5 bg-white border border-[#E5E7EB]">
         <TrlView />
+      </div>
+      <div className="rounded-lg mt-5 p-5 bg-white border border-[#E5E7EB]">
+        <CategoryView />
+      </div>
+      <div className="rounded-lg mt-5 p-5 bg-white border border-[#E5E7EB]">
+        <BusinessModelView />
       </div>
     </>
   );
