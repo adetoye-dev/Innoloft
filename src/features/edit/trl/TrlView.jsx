@@ -32,7 +32,7 @@ const TrlView = () => {
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
+          <Listbox.Label className="block text-2xl font-medium leading-6 text-gray-900">
             Select TRL
           </Listbox.Label>
           <div className="relative mt-2">
