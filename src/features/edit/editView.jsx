@@ -1,10 +1,10 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import ReactPlayer from "react-player";
+import TrlView from "./trl/TrlView";
 
 const EditView = () => {
-  const dispatch = useDispatch();
   const product = useSelector((state) => state.product.data);
 
   const companyAddress = `${product?.company?.address?.street} 
@@ -58,6 +58,9 @@ const EditView = () => {
         <div className="player-wrapper mx-auto w-100 md:w-2/3 aspect-video">
           <ReactPlayer url={product?.video} width="100%" height="100%" />
         </div>
+      </div>
+      <div className="rounded-lg mt-5 p-5 bg-white border border-[#E5E7EB]">
+        <TrlView />
       </div>
     </>
   );
