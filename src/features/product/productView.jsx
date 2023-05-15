@@ -38,7 +38,7 @@ const ProductView = ({ configuration }) => {
           </h1>
           <p className="product-desc text-lg">{product?.description}</p>
         </div>
-        <div className="company-details p-5 md:w-2/5 md:border-l border-[#E5E7EB]">
+        <div className="company-details flex flex-col gap-8 p-5 md:w-2/5 md:border-l border-[#E5E7EB]">
           <div className="company-data">
             <span>Offered By</span>
             <img
@@ -64,7 +64,7 @@ const ProductView = ({ configuration }) => {
           )}
           <div className="company-location">
             <div className="address">
-              <img src="" alt="location-icon" />
+              <img src="/icons/location-icon.svg" alt="location-icon" />
               <p>{companyAddress}</p>
             </div>
             <Map
