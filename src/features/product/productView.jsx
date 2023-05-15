@@ -30,7 +30,7 @@ const ProductView = ({ configuration }) => {
 
   return (
     <>
-      <div className="main flex flex-col md:flex-row rounded-lg bg-white border border-[#E5E7EB]">
+      <div className="main flex flex-col md:flex-row rounded-lg text-lg bg-white border border-[#E5E7EB]">
         <div className="product-details p-5  md:w-3/4">
           <img src={product?.picture} alt="product-img" />
           <h1 className="product-title font-bold text-3xl">{product?.title}</h1>
@@ -76,13 +76,15 @@ const ProductView = ({ configuration }) => {
         </div>
       </div>
       <div className="video flex flex-col rounded-lg mt-5 p-5 bg-white border border-[#E5E7EB]">
-        <h2 className="category-title font-bold text-2xls">Video</h2>
+        <h2 className="category-title font-bold text-2xl mb-10">Video</h2>
         <div className="player-wrapper mx-auto w-100 md:w-2/3 aspect-video">
           <ReactPlayer url={product?.video} width="100%" height="100%" />
         </div>
       </div>
       <div className="offer-details grid rounded-lg mt-5 p-5 bg-white border border-[#E5E7EB]">
-        <h2 className="category-title font-bold text-2xls">Offer Details</h2>
+        <h2 className="category-title font-bold text-2xl mb-10">
+          Offer Details
+        </h2>
         <div className="details-categories grid gap-10 md:grid-cols-2">
           <ProductCategory
             title="Technology"
