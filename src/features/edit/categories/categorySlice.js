@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchProduct } from "product/productSlice";
+import { nanoid } from "nanoid";
 
 const initialState = {
   data: [],
@@ -10,7 +11,7 @@ const categorySlice = createSlice({
   initialState,
   reducers: {
     addCategories: (state, action) => {
-      state.data = [...state.data, { id: "nanoid", name: action.payload }];
+      state.data = [...state.data, { id: nanoid(), name: action.payload }];
     },
     removeCategories: (state, action) => {
       state.data = state.data.filter(
