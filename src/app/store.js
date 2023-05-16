@@ -4,6 +4,7 @@ import productReducer from "product/productSlice";
 import categoryReducer from "edit/categories/categorySlice";
 import modelsReducer from "edit/businessModels/modelsSlice";
 import trlReducer from "edit/trl/trlSlice";
+import descriptionReducer from "src/features/edit/editor/descriptionSlice";
 
 const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ const store = configureStore({
     product: productReducer,
     categories: categoryReducer,
     businessModels: modelsReducer,
+    description: descriptionReducer,
     trl: trlReducer,
   },
 });
