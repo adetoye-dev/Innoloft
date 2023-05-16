@@ -5,10 +5,12 @@ import Loader from "features/loader/Loader";
 import ProductCategory from "product/ProductCategory";
 import ReactPlayer from "react-player";
 import Map from "./Map";
+import TurndownService from "turndown";
 import { Link } from "react-router-dom";
 
 const ProductView = ({ configuration }) => {
   const dispatch = useDispatch();
+  var turndownService = new TurndownService();
 
   const {
     loading,
@@ -50,7 +52,9 @@ const ProductView = ({ configuration }) => {
           <h1 className="product-title font-bold text-3xl my-5">
             Intelligent Finite Elements in Structural mechanics
           </h1>
-          <p className="product-desc text-lg">{product?.description}</p>
+          <div className="product-desc text-lg">
+            {turndownService.turndown(product?.description)}
+          </div>
         </div>
         <div className="company-details flex flex-col gap-8 p-5 md:w-2/5 md:border-l border-[#E5E7EB]">
           <div className="company-data">
