@@ -1,21 +1,14 @@
 import React from "react";
-import GoogleMapReact from "google-map-react";
 
 const Map = ({ location }) => {
   return (
-    <div className="map">
+    <div className="map mt-10">
       <div className="google-map">
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: "" }}
-          defaultCenter={location}
-          defaultZoom={0}
-        >
-          {/* <LocationPin
-            lat={location.lat}
-            lng={location.lng}
-            text={location.address}
-          /> */}
-        </GoogleMapReact>
+        <iframe
+          src={`http://maps.google.com/maps?q=${location.lat},${location.lng}&z=13&output=embed`}
+          height="250"
+          width="100%"
+        ></iframe>
       </div>
     </div>
   );
