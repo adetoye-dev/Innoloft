@@ -20,7 +20,6 @@ function App() {
 
   const dispatch = useDispatch();
   const { loading, data: appConfig } = useSelector((state) => state.appConfig);
-  console.log(appConfig, loading);
 
   useEffect(() => {
     dispatch(fetchAppConfiguration(APP_ID));
