@@ -39,13 +39,16 @@ const CategoryView = () => {
             <span
               key={item.id}
               onClick={() => deleteCategory(item.id)}
-              className="rounded-lg text-lg bg-[#E5E7EB] text-[#6B7280] px-3"
+              className="rounded-lg text-lg bg-[#E5E7EB] text-[#6B7280] px-3 cursor-pointer"
             >
               {item?.name} <span className="ml-3">x</span>
             </span>
           );
         })}
-        <span className="ml-auto" onClick={() => setShowEditTab(true)}>
+        <span
+          className="ml-auto cursor-pointer"
+          onClick={() => setShowEditTab(true)}
+        >
           + Add New
         </span>
       </div>
@@ -64,13 +67,13 @@ const CategoryView = () => {
           />
           <div className="buttons flex gap-5 justify-end">
             <div
-              className="cancel bg-red-300 p-3 rounded-md text-lg"
+              className="cancel bg-red-300 p-3 rounded-md text-lg cursor-pointer"
               onClick={cancelEdit}
             >
               Cancel
             </div>
             <div
-              className="save bg-green-300 p-3 rounded-md text-lg"
+              className="save bg-green-300 p-3 rounded-md text-lg cursor-pointer"
               onClick={addCategory}
             >
               Save

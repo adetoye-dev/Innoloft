@@ -18,7 +18,7 @@ const EditorView = () => {
       <ReactQuill theme="snow" value={editorState} onChange={setEditorState} />
       <span
         onClick={saveDesc}
-        className="px-5 py-3 bg-blue-950 text-white rounded-lg ml-auto"
+        className="px-5 py-3 bg-blue-950 text-white rounded-lg ml-auto cursor-pointer"
       >
         Save
       </span>
