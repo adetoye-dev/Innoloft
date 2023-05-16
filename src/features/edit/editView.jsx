@@ -5,6 +5,7 @@ import ReactPlayer from "react-player";
 import TrlView from "edit/trl/TrlView";
 import CategoryView from "edit/categories/categoryView";
 import BusinessModelView from "edit/businessModels/BusinessModelView";
+import EditorView from "edit/editor/EditorView";
 
 const EditView = () => {
   const product = useSelector((state) => state.product.data);
@@ -25,7 +26,7 @@ const EditView = () => {
           <h1 className="product-title font-bold text-3xl my-5">
             Intelligent Finite Elements in Structural mechanics
           </h1>
-          <p className="product-desc text-lg">{product?.description}</p>
+          <EditorView />
         </div>
         <div className="company-details flex flex-col gap-8 p-5 md:w-2/5 md:border-l border-[#E5E7EB]">
           <div className="company-data">
