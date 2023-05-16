@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader from "features/loader/Loader";
 import PageLayout from "features/layout/PageLayout";
 import PageNotFound from "./features/404/PageNotFound";
+import HomePage from "./features/home/HomePage";
 
 //Lazy Imports
 const ProductPage = lazy(() => import("product/productView"));
@@ -37,7 +38,7 @@ function App() {
           </Suspense>
         }
       >
-        <Route index element={<h1>Home Page</h1>} />
+        <Route index element={<HomePage />} />
         <Route
           path="product/:id"
           element={<ProductPage configuration={appConfig} />}
