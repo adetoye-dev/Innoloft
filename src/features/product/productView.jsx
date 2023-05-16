@@ -5,6 +5,7 @@ import Loader from "features/loader/Loader";
 import ProductCategory from "product/ProductCategory";
 import ReactPlayer from "react-player";
 import Map from "./Map";
+import { Link } from "react-router-dom";
 
 const ProductView = ({ configuration }) => {
   const dispatch = useDispatch();
@@ -30,6 +31,15 @@ const ProductView = ({ configuration }) => {
 
   return (
     <>
+      <div className="section-header flex mb-5">
+        <Link
+          to="/product/edit"
+          className="ml-auto inline-flex text-xl gap-3 p-3 bg-blue-950 cursor-pointer hover:bg-blue-700 text-white rounded-xl"
+        >
+          <img src="/icons/edit-icon.svg" />
+          <span>Edit</span>
+        </Link>
+      </div>
       <div className="main relative flex flex-col md:flex-row rounded-lg text-lg bg-white border border-[#E5E7EB]">
         <div className="absolute p-3 bg-blue-950 text-white rounded-br-xl flex gap-3">
           <img src="/icons/type-icon.svg" alt="product-type-icon" />
