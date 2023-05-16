@@ -53,7 +53,9 @@ const ProductView = ({ configuration }) => {
             Intelligent Finite Elements in Structural mechanics
           </h1>
           <div className="product-desc text-lg">
-            {turndownService.turndown(product?.description)}
+            {product?.description
+              ? turndownService.turndown(product.description)
+              : ""}
           </div>
         </div>
         <div className="company-details flex flex-col gap-8 p-5 md:w-2/5 md:border-l border-[#E5E7EB]">
