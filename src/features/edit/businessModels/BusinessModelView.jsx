@@ -41,11 +41,14 @@ const BusinessModelView = () => {
               onClick={() => deleteBusinessModel(item.id)}
               className="rounded-lg text-lg bg-[#E5E7EB] text-[#6B7280] px-3"
             >
-              {item?.name} <span className="ml-3">x</span>
+              {item?.name} <span className="ml-3 cursor-pointer">x</span>
             </span>
           );
         })}
-        <span className="ml-auto" onClick={() => setShowEditTab(true)}>
+        <span
+          className="ml-auto cursor-pointer"
+          onClick={() => setShowEditTab(true)}
+        >
           + Add New
         </span>
       </div>
@@ -64,13 +67,13 @@ const BusinessModelView = () => {
           />
           <div className="buttons flex gap-5 justify-end">
             <div
-              className="cancel bg-red-300 p-3 rounded-md text-lg"
+              className="cancel bg-red-300 p-3 rounded-md text-lg cursor-pointer"
               onClick={cancelEdit}
             >
               Cancel
             </div>
             <div
-              className="save bg-green-300 p-3 rounded-md text-lg"
+              className="save bg-green-300 p-3 rounded-md text-lg cursor-pointer"
               onClick={addBusinessModel}
             >
               Save
