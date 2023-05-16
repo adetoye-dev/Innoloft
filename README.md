@@ -1,6 +1,17 @@
 # Innoloft
 Innoloft frontend application project
 
+## Getting started 
+
+### To get started with running the App on your local machine, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Install the required dependencies by running `npm install` in the project directory.
+3. Start the server by running `npm run dev`in the project directory.
+4. Navigate to: **http://localhost:5173** 
+in your web browser to access the app.
+5. Happy viewing!
+
 # Instructions 
 Please stick to the following instructions on how to submit your application:
 1. Read the **whole** README
