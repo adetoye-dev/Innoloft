@@ -1,13 +1,20 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
 import ReactPlayer from "react-player";
 import TrlView from "edit/trl/TrlView";
 import CategoryView from "edit/categories/categoryView";
 import BusinessModelView from "edit/businessModels/BusinessModelView";
 import EditorView from "edit/editor/EditorView";
+import { Link } from "react-router-dom";
+import { updateProduct } from "product/productSlice";
 
 const EditView = () => {
+  const dispatch = useDispatch();
+
+  const saveChanges = () => {
+    dispatch(updateProduct());
+  };
   const product = useSelector((state) => state.product.data);
 
   const companyAddress = `${product?.company?.address?.street} 
@@ -20,6 +27,21 @@ const EditView = () => {
   if (!product.id) return <Navigate to="/product/5781" />;
   return (
     <>
+      <div className="section-header justify-between flex mb-5">
+        <Link
+          to="/product/5781"
+          className="items-center inline-flex text-xl gap-3 p-3 text-blue-950"
+        >
+          <i className="fas fa-arrow-left" />
+          <span>Go Back</span>
+        </Link>
+        <div
+          onClick={saveChanges}
+          className="inline-flex text-xl gap-3 p-3 bg-blue-950 cursor-pointer hover:bg-blue-700 text-white rounded-xl"
+        >
+          <span>Save Changes</span>
+        </div>
+      </div>
       <div className="main flex flex-col md:flex-row rounded-lg text-lg bg-white border border-[#E5E7EB]">
         <div className="product-details p-5  md:w-3/4">
           <img src={product?.picture} alt="product-img" />
