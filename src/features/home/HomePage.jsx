@@ -9,6 +9,7 @@ const HomePage = () => {
         height="640"
         allowFullScreen
         frameBorder="0"
+        role="presentation"
       ></iframe>
     </>
   );
