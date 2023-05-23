@@ -45,7 +45,10 @@ const EditView = () => {
       <div className="main flex flex-col md:flex-row rounded-lg text-lg bg-white border border-[#E5E7EB]">
         <div className="product-details p-5  md:w-3/4">
           <img src={product?.picture} alt="product-img" />
-          <h1 className="product-title font-bold text-3xl my-5">
+          <h1
+            data-testid="product-title"
+            className="product-title font-bold text-3xl my-5"
+          >
             Intelligent Finite Elements in Structural mechanics
           </h1>
           <EditorView />
