@@ -16,6 +16,7 @@ export default defineConfig({
       product: "/src/features/product",
       edit: "/src/features/edit",
       404: "/src/features/404",
+      tests: "/src/tests",
     },
   },
   test: {
