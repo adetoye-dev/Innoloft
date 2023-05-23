@@ -1,22 +1,13 @@
-import { render as rtlRender, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-import store from "app/store.js";
-import { Provider } from "react-redux";
-
-const render = (component) =>
-  rtlRender(
-    <Provider store={store}>
-      <BrowserRouter>{component}</BrowserRouter>
-    </Provider>
-  );
+import { renderWithProviders } from "tests/test-utils";
 
 test("renders App component without crashing", () => {
-  const { unmount } = render(<App />);
+  const { unmount } = renderWithProviders(<App />);
   unmount();
 });
 
 test("renders Loader component when app configuration is still loading", () => {
-  render(<App />);
+  renderWithProviders(<App />);
   expect(screen.getByText("Loading App Configurations...")).toBeInTheDocument();
 });
